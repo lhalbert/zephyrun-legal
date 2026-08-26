@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZephyRun Policies</title>
+<style>
+  :root {
+    --bg: #F6F9FB;
+    --text: #16232F;
+    --text-dim: #4E6072;
+    --accent: #1F6FA8;
+    --accent-teal: #0E9C87;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0D1620;
+      --text: #EAF2F8;
+      --text-dim: #93A9BC;
+      --accent: #7FC2EA;
+      --accent-teal: #5FD6C4;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 96px 24px;
+    display: flex;
+    justify-content: center;
+  }
+  .page { max-width: 480px; text-align: center; }
+  .wordmark { font-size: 1.65rem; font-weight: 800; margin: 0 0 8px; }
+  .wordmark em { font-style: italic; color: var(--accent-teal); }
+  p.lede { color: var(--text-dim); margin: 0 0 40px; }
+  ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  a {
+    display: block;
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid rgba(31, 111, 168, 0.25);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="wordmark">Zephy<em>Run</em></p>
+  <p class="lede">Public policy pages</p>
+  <ul>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+</div>
+</body>
+</html>

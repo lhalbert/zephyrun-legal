@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZephyRun Privacy Policy</title>
+<style>
+  :root {
+    --bg: #F6F9FB;
+    --surface: #FFFFFF;
+    --text: #16232F;
+    --text-dim: #4E6072;
+    --line: rgba(31, 111, 168, 0.16);
+    --accent: #1F6FA8;
+    --accent-bright: #3E9FD8;
+    --accent-teal: #0E9C87;
+    --mark-bg: rgba(95, 214, 196, 0.16);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0D1620;
+      --surface: #121F2C;
+      --text: #EAF2F8;
+      --text-dim: #93A9BC;
+      --line: rgba(207, 234, 247, 0.14);
+      --accent: #7FC2EA;
+      --accent-bright: #6BB8EE;
+      --accent-teal: #5FD6C4;
+      --mark-bg: rgba(95, 214, 196, 0.14);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 64px 24px 96px;
+    margin: 0;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 56px;
+  }
+
+  .wordmark {
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 22px;
+  }
+  .wordmark em {
+    font-style: italic;
+    color: var(--accent-teal);
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 0.86rem;
+    color: var(--text-dim);
+  }
+  .meta .sep { opacity: 0.5; }
+
+  .lede {
+    margin: 22px 0 0;
+    font-size: 1.02rem;
+    color: var(--text-dim);
+    max-width: 58ch;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  section h2 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+
+  section .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  section p {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--text);
+  }
+  section p + p {
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 5px 11px;
+    border-radius: 99px;
+    background: var(--mark-bg);
+    color: var(--accent-teal);
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  a { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    body { padding: 48px 18px 72px; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <p class="wordmark">Zephy<em>Run</em></p>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>Last reviewed August 26, 2026</span>
+      <span class="sep">·</span>
+      <span>Applies to the ZephyRun iOS and watchOS apps</span>
+    </div>
+    <p class="lede">
+      ZephyRun builds your training plan from runs you log — on your phone, on your
+      wrist, or in any other app that writes to Apple Health. Here's exactly what that
+      involves, in plain language.
+    </p>
+    <div class="badge-row">
+      <span class="badge">On-device only</span>
+      <span class="badge">No ads</span>
+      <span class="badge">No data sold</span>
+      <span class="badge">No account required</span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>What we read from Apple Health</h2>
+      <div class="card">
+        <p>Your past runs — distance, duration, and heart rate — to estimate your fitness and set training paces.</p>
+        <p>GPS routes from runs logged in other apps, so Run Detail can show a map and splits.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What we write to Apple Health</h2>
+      <div class="card">
+        <p>A summary of each run you record with ZephyRun — distance, duration, and route where available.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Location</h2>
+      <div class="card">
+        <p>ZephyRun uses your location only while you're actively recording a run, to calculate pace, distance, and route.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What we store on your device</h2>
+      <div class="card">
+        <p>Your training plan and preferences (units, notifications). There's no account or login.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What we never do</h2>
+      <div class="card">
+        <p>Your health data stays on this iPhone. There's no backend server in ZephyRun — nothing is uploaded.</p>
+        <p>We never sell your data or share it with third parties, and never use it for advertising.</p>
+        <p>Instrumentation (app usage patterns, visible in Settings) is logged locally on-device only — it's never transmitted anywhere.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Your controls</h2>
+      <div class="card">
+        <p>Export your run history or delete all local app data anytime from Settings → Data &amp; privacy.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Children</h2>
+      <div class="card">
+        <p>ZephyRun isn't directed at children under 13 and doesn't knowingly collect their data.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Changes to this policy</h2>
+      <div class="card">
+        <p>If this policy changes, the updated version will be published at this same page and reflected in the app's own Settings → Privacy Policy screen.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>ZephyRun</span>
+    <span>Health disclaimer: ZephyRun is a training-plan tool, not a medical device or a substitute for professional medical advice.</span>
+  </footer>
+</div>
+
+</body>
+</html>
