@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZephyRun Press Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column with a race-bib header, a facts strip, then a horizontally scrolling screenshot rail */
+:root {
+  --bg: #f4f7fa;
+  --surface: #ffffff;
+  --ink: #0f2233;
+  --muted: #4d6175;
+  --line: #d5dee7;
+  --zephyr: #166a98;
+  --bib: #f2c230;
+  --bib-ink: #1a1a12;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1620; --surface: #13212e; --ink: #e6eef5; --muted: #9db0c2;
+    --line: #24384a; --zephyr: #5fb1e0; --bib: #f2c230; --bib-ink: #1a1a12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1620; --surface: #13212e; --ink: #e6eef5; --muted: #9db0c2;
+  --line: #24384a; --zephyr: #5fb1e0; --bib: #f2c230; --bib-ink: #1a1a12;
+  color-scheme: dark;
+}
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; }
+.wrap {
+  max-width: 46rem; margin: 0 auto;
+  padding-block: 3rem 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 3rem;
+}
+h1, h2 { font-family: var(--display); font-stretch: 112%; text-wrap: balance; margin: 0; }
+h1 { font-weight: 800; font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1.02; letter-spacing: -0.01em; }
+h2 { font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--zephyr); }
+p { margin: 0; max-width: 65ch; }
+section { display: grid; gap: 1rem; min-width: 0; }
+
+header { display: grid; gap: 1.25rem; }
+.brand { display: flex; align-items: center; gap: 1rem; }
+.brand img { width: 72px; height: 72px; border-radius: 16px; }
+.brand span { font-family: var(--display); font-stretch: 112%; font-weight: 800; font-size: 1.5rem; }
+.lede { font-size: 1.2rem; color: var(--muted); }
+
+/* finish-line bib: the one bold element */
+.bib {
+  justify-self: start; display: grid; gap: 0.15rem;
+  background: var(--bib); color: var(--bib-ink);
+  padding: 0.9rem 1.2rem; border-radius: 6px;
+  font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.04em;
+  position: relative;
+}
+.bib::before, .bib::after { content: ""; position: absolute; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--bg); }
+.bib::before { left: 8px; } .bib::after { right: 8px; }
+.bib strong { font-family: var(--display); font-stretch: 112%; font-size: 1.35rem; letter-spacing: 0; }
+
+.story p + p { margin-top: 0.25rem; }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); border-top: 1px solid var(--line); margin: 0; }
+.fact { padding: 0.85rem 1rem 0.85rem 0; border-bottom: 1px solid var(--line); display: grid; gap: 0.15rem; }
+.fact dt { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.fact dd { margin: 0; font-weight: 600; }
+
+ul.features { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.5rem; max-width: 65ch; }
+
+.rail { display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 0.75rem; scroll-snap-type: x mandatory; }
+.rail figure { margin: 0; flex: 0 0 auto; width: 13rem; max-width: 100%; scroll-snap-align: start; display: grid; gap: 0.4rem; align-content: start; }
+.rail img { width: 100%; border-radius: 14px; border: 1px solid var(--line); }
+.rail figure.watch img { border-radius: 40px; background: #000; }
+.rail figcaption { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem; display: grid; gap: 0.75rem; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.addr { font-family: var(--mono); font-size: 0.95rem; user-select: all; overflow-wrap: anywhere; }
+button {
+  font: 600 0.85rem var(--display); font-stretch: 112%;
+  background: var(--zephyr); color: var(--surface); border: 0; border-radius: 6px;
+  padding: 0.55rem 0.9rem; cursor: pointer;
+}
+button:focus-visible, a:focus-visible, .rail:focus-visible { outline: 3px solid var(--bib); outline-offset: 2px; }
+a { color: var(--zephyr); }
+.note { font-size: 0.9rem; color: var(--muted); }
+footer { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <header>
+    <div class="brand"><img src="img/icon.png" alt="ZephyRun app icon"><span>ZephyRun</span></div>
+    <h1>A dad built a training app so his daughter could run her first half marathon.</h1>
+    <p class="lede">She finished. Now ZephyRun is on the App Store for every new runner.</p>
+    <div class="bib" aria-label="Race: Harrisonburg Half Marathon, 13.1 miles, October 3, 2026">
+      <span>HARRISONBURG HALF MARATHON</span>
+      <strong>13.1 MI · FINISHER</strong>
+      <span>OCT 3, 2026 · HARRISONBURG, VA</span>
+    </div>
+  </header>
+
+  <section class="story">
+    <h2>The story</h2>
+    <p>When his daughter Ashlynn, a JMU graduate student in Harrisonburg, signed up for the Harrisonburg Half Marathon, Louis Halbert, a Virginia veteran and software developer, built her a training app that gives runners a real plan without a subscription or an account.</p>
+    <p>ZephyRun builds a personalized plan from the race distance and date, sets easy, tempo and interval paces from the runner's current fitness, and adjusts when life gets in the way. Ashlynn trained with it and finished her first half marathon on October 3, 2026. The app is now free to download on the App Store.</p>
+  </section>
+
+  <section>
+    <h2>Fast facts</h2>
+    <dl class="facts">
+      <div class="fact"><dt>Platforms</dt><dd>iPhone (iOS 26+) and Apple Watch</dd></div>
+      <div class="fact"><dt>Price</dt><dd>Free download; optional one-time Pro upgrade, $14.99, no subscription</dd></div>
+      <div class="fact"><dt>Race distances</dt><dd>5K, 10K, half marathon, marathon</dd></div>
+      <div class="fact"><dt>Privacy</dt><dd>No accounts, no ads, data stays on the device</dd></div>
+      <div class="fact"><dt>Developer</dt><dd>Louis Halbert, Virginia</dd></div>
+      <div class="fact"><dt>Download</dt><dd><a href="https://apps.apple.com/app/id6805676967">ZephyRun on the App Store</a></dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>What it does</h2>
+    <ul class="features">
+      <li>Builds a training plan for a specific race and date, with paces grounded in recent runs from Apple Health.</li>
+      <li>Adapts the plan to missed runs, race-date changes and how many days a week the runner wants to train.</li>
+      <li>Tracks runs live with pace, distance and heart rate on iPhone or Apple Watch.</li>
+      <li>Works strength training into the week without crowding hard running days.</li>
+      <li>Counts every run in Apple Health, including runs logged in other apps.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Screenshots</h2>
+    <div class="rail" tabindex="0" aria-label="App screenshots, scroll sideways">
+      <figure><img src="img/plan.jpg" alt="A training plan that adapts week to week"><figcaption>Plan that adapts</figcaption></figure>
+      <figure><img src="img/paces.jpg" alt="Training paces calculated for the runner"><figcaption>Paces set for you</figcaption></figure>
+      <figure><img src="img/raceday.jpg" alt="Race day view"><figcaption>Race day</figcaption></figure>
+      <figure><img src="img/private.jpg" alt="Privacy: data stays on the device"><figcaption>Private by design</figcaption></figure>
+      <figure class="watch"><img src="img/watch.png" alt="Apple Watch live run screen"><figcaption>Apple Watch live run</figcaption></figure>
+    </div>
+    <p class="note">Full-resolution screenshots, the app icon and race-day photos are available on request.</p>
+  </section>
+
+  <section>
+    <h2>Press &amp; partnerships</h2>
+    <div class="contact">
+      <p>Running clubs, race directors and training programs can request free Pro codes for their runners.</p>
+      <div class="row">
+        <span class="addr" id="email">iosapp@h2enterprises.org</span>
+        <button type="button" id="copy">Copy email</button>
+        <span class="note" id="copied" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>ZephyRun press kit · Updated October 2026</footer>
+</main>
+
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var el = document.getElementById('email');
+  var status = document.getElementById('copied');
+  function fallback() {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    status.textContent = 'Selected. Press Ctrl+C or ⌘C to copy.';
+  }
+  try {
+    navigator.clipboard.writeText(el.textContent).then(function () { status.textContent = 'Copied'; }, fallback);
+  } catch (e) { fallback(); }
+});
+</script>
+</body>
+</html>
